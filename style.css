@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'salterio_shadowregular';
+    font-family: 'cloister black';
     src: url('fonts\\cloister_black\\CloisterBlack.ttf');
     font-weight: normal;
     font-style: normal;
@@ -7,19 +7,23 @@
 h1, h2, h3 {
     text-align: justify;
     font-size: 100px;
-    font-family: 'salterio_shadowregular';
+    font-family: 'cloister black';
     color: black;
     opacity: 85%;
+    max-width: 100%;
 }
-div{
-    width: 90%;
-    text-align: center;
+div {
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    background-color: cornsilk;
+    max-width: 75%;
 }
 body {
     background-image: url('backgrounds\\parchment.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    background-size: 75% 100%;
-    background-color: DARKGOLDENROD;
+    background-size: 100% 100%;
 }
