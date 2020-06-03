@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'salterio_shadowregular';
+    src: url('fonts\\cloister_black\\CloisterBlack.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+h1, h2, h3 {
+    text-align: justify;
+    font-size: 100px;
+    font-family: 'salterio_shadowregular';
+    color: black;
+    opacity: 85%;
+}
+div{
+    width: 90%;
+    text-align: center;
+}
+body {
+    background-image: url('backgrounds\\parchment.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 75% 100%;
+    background-color: DARKGOLDENROD;
+}
