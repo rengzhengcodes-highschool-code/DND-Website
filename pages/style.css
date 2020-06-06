@@ -17,6 +17,12 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'old london';
+    src: url('..\\fonts\\old_london\\OldLondon.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
 html{
     overflow-wrap: break-word;
 }
@@ -25,12 +31,24 @@ div.header {
     margin: 10px;
     max-width: 100%;
     text-align: center;
-}
-.heading, div.header > h1 {
-    font-family: 'ruritania';
+    font-size: 32px;
+    font-family: 'Ruritania';
     color: black;
     max-width: 100%;
-    font-size: 64px;
+}
+/*style for main body headings*/
+.heading {
+    font-family: 'old london';
+    color: black;
+}
+h2.heading {
+    font-size: 56px;
+}
+h3.heading {
+    font-size: 48px;
+}
+h4.heading {
+    font-size: 36px;
 }
 /*style of container for the main body of text */
 div.text {
@@ -42,14 +60,14 @@ div.text {
     opacity: 75%;
     max-width: 75%;
 }
-p.body, div.text > p {
+.body, div.text > p {
     text-align: justify;
     font-size: 36px;
     font-family: 'cormorant upright';
     color: black;
 }
 @media screen and (max-width: 600px){
-    p.body, div.text > p {
+    .body, div.text > p {
         text-align: left;
         font-size: 36px;
         font-family: 'cormorant upright';
