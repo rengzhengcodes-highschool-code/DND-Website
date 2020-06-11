@@ -57,8 +57,9 @@ div.text {
     margin-top: 5%;
     margin-bottom: 5%;
     background-color: cornsilk;
-    opacity: 75%;
+    fill-opacity: 75%;
     max-width: 75%;
+    padding: 5%;
 }
 .body, div.text > p {
     text-align: justify;
