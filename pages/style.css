@@ -50,6 +50,10 @@ h3.heading {
 h4.heading {
     font-size: 36px;
 }
+.heading > a {
+    text-decoration: none;
+    color: black;
+}
 /*style of container for the main body of text */
 div.text {
     margin-left: 12.5%;
@@ -86,7 +90,7 @@ div.footer {
 }
 p.cite, div.footer > p {
     text-align: center;
-    font-size: 12px;
+    font-size: 18px;
     font-family: 'Times New Roman', Times, serif;
     color: black;
 }
@@ -114,7 +118,7 @@ div.topnav a {
     text-align: center;
     align-content: center;
     text-decoration: none;
-    width: 25%;
+    width: 20%;
     height: 100%;
     font-family: 'cloister black';
     font-size: 40px;
@@ -155,4 +159,16 @@ div.topnav a:hover {
 .columnlargo {
     float: left;
     width: 70%;
+}
+/*iframe wrappers*/
+div.videowrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+}
+div.videowrapper > iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
