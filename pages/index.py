@@ -23,7 +23,7 @@ def spell_api_import():
     data = data[: level_int_location] + data[level_int_location] + '"' + data[level_int_location + 1:] #Adds character so split() can process the split correctly.
     data = list(data.split('","'))
     for i in range(len(data)):
-        data[i] = data[i].replace('"', '') #removes extraneous characters
+        data[i] = data[i].replace('"', '', 2) #removes extraneous "
     spell_attributes = dict()
     for attribute in data.copy():
         colon_separator_location = attribute.find(':')
@@ -55,6 +55,7 @@ def python_to_html_marker(string, python_marker, html_marker):
 
 def python_to_html(string):
     string = python_to_html_marker(string, '\\n', '<br>')
+    string = python_to_html_marker(string, '\"', '"')#this isn't actually inherently a python marker but a work around to removing the " from earlier
     return string
 
 
@@ -96,7 +97,7 @@ def spell_html_format():
 
 
 def main():
-    page = codecs.open('index.html', 'r', 'utf-8').read()
+    page = codecs.open('dependencies/index/index.html', 'r', 'utf-8').read()
     spell = spell_html_format()
     page = 'Content-type:text/html\n\n' + page.format(title='homepage', body=spell)
     print(page)
