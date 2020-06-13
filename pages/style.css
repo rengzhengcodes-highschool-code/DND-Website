@@ -65,7 +65,7 @@ div.text {
     max-width: 75%;
     padding: 5%;
 }
-.body, div.text > p {
+.body, div.text > p, div.text > form > input {
     text-align: justify;
     font-size: 36px;
     font-family: 'cormorant upright';
