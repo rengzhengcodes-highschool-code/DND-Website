@@ -172,3 +172,13 @@ div.videowrapper > iframe {
     width: 100%;
     height: 100%;
 }
+/*img wrappers*/
+div.imgwrapper {
+    position: relative;
+}
+div.imgwrapper > img {
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    height: auto;
+}

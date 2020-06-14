@@ -5,16 +5,10 @@ import random
 import requests
 
 
-def get_spell(): #retrieves name of a random spell
-    with open('dependencies/index/slugs.txt') as file:
-        spells = list(file)
-        spell = (spells[random.randint(0, len(spells) - 1)]).rstrip('\n')
-        return spell
-
-
-spell_api_import = lambda spell: requests.get('https://api.open5e.com/spells/?slug__iexact={spell}'.format(spell=spell)).json()['results'][0]
-
-
+#def times_opened():
+#    x = int(open('dependencies/index/uses.txt', 'r').read()) + 1
+#    open('dependencies/index/uses.txt', 'r')
+    
 def markdown_to_html_marker(string, markdown_marker, html_marker):
     markdown_marker_length = len(markdown_marker)
     markdown_marker_count = string.count(markdown_marker)
@@ -41,6 +35,15 @@ def python_to_html(string):
     string = python_to_html_marker(string, '\"', '"')#this isn't actually inherently a python marker but a work around to removing the " from earlier
     return string
 
+def get_spell(): #retrieves name of a random spell
+    with open('dependencies/index/slugs.txt') as file:
+        spells = list(file)
+        spell = (spells[random.randint(0, len(spells) - 1)]).rstrip('\n')
+        return spell
+
+
+spell_api_import = lambda spell: requests.get('https://api.open5e.com/spells/?slug__iexact={spell}'.format(spell=spell)).json()['results'][0]
+
 
 def spell_html_format():
     spell = spell_api_import(get_spell())
@@ -50,6 +53,7 @@ def spell_html_format():
         spell_components = '{components} ({materials})'.format(components = spell['components'], materials = spell['material'])
     else:
         spell_components = spell['components']
+    spell['desc'] = markdown_to_html(python_to_html(spell['desc']))
     if spell['higher_level']: #adds what happens at a higher level, if anything
         higher_level = '<br> <b>At Higher Levels: </b>' + spell['higher_level']
     else:
@@ -57,11 +61,11 @@ def spell_html_format():
     container = container.format(name = name, level = spell['level'], school = spell['school'], classes = spell['dnd_class'], archetypes = spell['archetype'], 
     range=spell['range'], duration=spell['duration'], components=spell_components, concentration=spell['concentration'], ritual=spell['ritual'], spelldesc = spell['desc'], 
     higher_level=higher_level, source=spell['page'], license = spell['document__license_url'])
-    container = markdown_to_html(python_to_html(container))
     return container
 
 
 def main():
+    #times_opened()
     spell = spell_html_format()
     page = 'Content-type:text/html\n\n' + codecs.open('dependencies/index/index.html', 'r', 'utf-8').read().format(title='homepage', body=spell)
     print(page)
