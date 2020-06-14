@@ -9,7 +9,7 @@ get_dependency = lambda filename, path='dependencies/questionaire/forms/': codec
 
 
 image_source = {'artificer': '<a href = "https://nerdarchy.com/turn-up-the-heat-in-5e-dd-with-a-go-to-artificer-spell/">https://nerdarchy.com/turn-up-the-heat-in-5e-dd-with-a-go-to-artificer-spell</a>',
-                'barbarian': 'phb', 'bard': 'phb', 'cleric': 'phb', 'druid': 'phb', 'fighter': 'phb', 'monk': 'phb', 'paladin': 'phb', 'ranger':'phb', 'rogue': 'phb', 'sorcerer': 'phb', 'warlock': 'phb', 'wizard': 'phb'}
+                'barbarian': 'Player\'s Handbook', 'bard': 'Player\'s Handbook', 'cleric': 'Player\'s Handbook', 'druid': 'Player\'s Handbook', 'fighter': 'Player\'s Handbook', 'monk': 'Player\'s Handbook', 'paladin': 'Player\'s Handbook', 'ranger':'Player\'s Handbook', 'rogue': 'Player\'s Handbook', 'sorcerer': 'Player\'s Handbook', 'warlock': 'Player\'s Handbook', 'wizard': 'Player\'s Handbook'}
 
 
 def main():
