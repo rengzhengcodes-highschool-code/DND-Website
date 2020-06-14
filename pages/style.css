@@ -94,6 +94,10 @@ p.cite, div.footer > p {
     font-family: 'Times New Roman', Times, serif;
     color: black;
 }
+div.footer > p > a {
+    color: black;
+    text-decoration: none;
+}
 /*creates a background image that doesn't move for the entire program*/
 body {
     background-image: url('..\\backgrounds\\parchment.jpg');

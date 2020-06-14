@@ -4,10 +4,6 @@ import codecs
 import random
 import requests
 
-
-#def times_opened():
-#    x = int(open('dependencies/index/uses.txt', 'r').read()) + 1
-#    open('dependencies/index/uses.txt', 'r')
     
 def markdown_to_html_marker(string, markdown_marker, html_marker):
     markdown_marker_length = len(markdown_marker)
@@ -65,7 +61,6 @@ def spell_html_format():
 
 
 def main():
-    #times_opened()
     spell = spell_html_format()
     page = 'Content-type:text/html\n\n' + codecs.open('dependencies/index/index.html', 'r', 'utf-8').read().format(title='homepage', body=spell)
     print(page)
